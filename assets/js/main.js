@@ -1,107 +1,81 @@
-
+/*
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
 (function($) {
 
 	var	$window = $(window),
 		$body = $('body'),
-		$wrapper = $('#page-wrapper'),
-		$banner = $('#banner'),
-		$header = $('#header');
+		$header = $('#header'),
+		$all = $body.add($header);
 
 	// Breakpoints.
 		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
+			xxlarge: [ '1681px',  '1920px' ],
+			xlarge:  [ '1281px',  '1680px' ],
+			large:   [ '1001px',  '1280px' ],
+			medium:  [ '737px',   '1000px' ],
+			small:   [ '481px',   '736px'  ],
+			xsmall:  [ null,      '480px'  ]
 		});
 
-var e = document.getElementById("myVideo");
-e.style.opacity = 0;
-
-var vid = document.getElementById("myVideo");
-vid.oncanplaythrough = function() {
-    setTimeout(function() {
-        var e = document.getElementById('myVideo');
-        fade(e);
-    }, 2000);
-};
-
-function fade(element) {
-    var op = 0;
-    var timer = setInterval(function() {
-        if (op >= 1) clearInterval(timer);
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += op * 0.1 || 0.1;
-    }, 10);
-}
-var video = document.getElementById("myVideo");
-video.addEventListener("canplay", function() {
-  setTimeout(function() {
-    video.play();
-  }, 1500);
-});
 	// Play initial animations on page load.
 		$window.on('load', function() {
-			window.setTimeout(function() {
+			setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
 		});
 
-	// Mobile?
+	// Touch mode.
 		if (browser.mobile)
-			$body.addClass('is-mobile');
+			$body.addClass('is-touch');
 		else {
 
-			breakpoints.on('>medium', function() {
-				$body.removeClass('is-mobile');
+			breakpoints.on('<=small', function() {
+				$body.addClass('is-touch');
 			});
 
-			breakpoints.on('<=medium', function() {
-				$body.addClass('is-mobile');
-			});
-
-		}
-
-	// Scrolly.
-		$('.scrolly')
-			.scrolly({
-				speed: 1500,
-				offset: $header.outerHeight()
-			});
-
-	// Menu.
-		$('#menu')
-			.append('<a href="#menu" class="close"></a>')
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
-
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
-
-			$window.on('resize', function() { $window.trigger('scroll'); });
-
-			$banner.scrollex({
-				bottom:		$header.outerHeight() + 1,
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
+			breakpoints.on('>small', function() {
+				$body.removeClass('is-touch');
 			});
 
 		}
-	
+
+	// Fix: IE flexbox fix.
+		if (browser.name == 'ie') {
+
+			var $main = $('.main.fullscreen'),
+				IEResizeTimeout;
+
+			$window
+				.on('resize.ie-flexbox-fix', function() {
+
+					clearTimeout(IEResizeTimeout);
+
+					IEResizeTimeout = setTimeout(function() {
+
+						var wh = $window.height();
+
+						$main.each(function() {
+
+							var $this = $(this);
+
+							$this.css('height', '');
+
+							if ($this.height() <= wh)
+								$this.css('height', (wh - 50) + 'px');
+
+						});
+
+					});
+
+				})
+				.triggerHandler('resize.ie-flexbox-fix');
+
+		}
+
 	// Gallery.
 		$window.on('load', function() {
 
@@ -145,7 +119,7 @@ video.addEventListener("canplay", function() {
 						.scrollex({
 							top:		'30vh',
 							bottom:		'30vh',
-							delay:		20,
+							delay:		50,
 							initialize:	function() { $(this).addClass('inactive'); },
 							terminate:	function() { $(this).removeClass('inactive'); },
 							enter:		function() { $(this).removeClass('inactive'); },
@@ -177,7 +151,7 @@ video.addEventListener("canplay", function() {
 					$('#contact')
 						.scrollex({
 							top:		'50%',
-							delay:		20,
+							delay:		50,
 							initialize:	function() { $(this).addClass('inactive'); },
 							terminate:	function() { $(this).removeClass('inactive'); },
 							enter:		function() { $(this).removeClass('inactive'); },
@@ -241,6 +215,5 @@ video.addEventListener("canplay", function() {
 			.on('load', function() {
 				$window.trigger('resize');
 			});
-
 
 })(jQuery);
