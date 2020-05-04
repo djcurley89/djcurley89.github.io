@@ -5461,7 +5461,6 @@ display: block;
 #one {
     background: url(images/overlay.png), url(../../images/profile.jpg);
     background-size: cover;
-	background-attachment: fixed, fixed;
 	float: left;
 }
 			
@@ -5470,7 +5469,6 @@ display: block;
 			#one {
 				 background: url(images/overlay.png), url("../../images/profilevert.jpg");
 				background-size: cover;
-				background-attachment: fixed, fixed;
 	
 			}
 
