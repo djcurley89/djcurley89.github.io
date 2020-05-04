@@ -3226,7 +3226,7 @@ body.is-mobile .main.style2 .button.anchored {
 				}
 
 			.main.style2 {
-				padding: 20em .2em 5em .2em;
+				padding: 22em .2em 2em .2em;
 			}
 
 				.main.style2:before, .main.style2:after {
@@ -4153,6 +4153,7 @@ display: block;
 	opacity: 1;
 } */
 
+	
 .gallery .from-left .overlay {
 	position: absolute;
   top: 0;
