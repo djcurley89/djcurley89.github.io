@@ -3169,7 +3169,7 @@ input, select, textarea {
 		
 			}
 			#one h2 {
-				margin 1em 0 0 0;
+				margin: 1em 0 0 0;
 				margin-block-start: 0.5em;
     			margin-block-end: 0.5em;
 			}
