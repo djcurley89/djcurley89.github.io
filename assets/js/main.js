@@ -1,81 +1,107 @@
-/*
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 (function($) {
 
 	var	$window = $(window),
 		$body = $('body'),
-		$header = $('#header'),
-		$all = $body.add($header);
+		$wrapper = $('#page-wrapper'),
+		$banner = $('#banner'),
+		$header = $('#header');
 
 	// Breakpoints.
 		breakpoints({
-			xxlarge: [ '1681px',  '1920px' ],
-			xlarge:  [ '1281px',  '1680px' ],
-			large:   [ '1001px',  '1280px' ],
-			medium:  [ '737px',   '1000px' ],
-			small:   [ '481px',   '736px'  ],
-			xsmall:  [ null,      '480px'  ]
+			xlarge:   [ '1281px',  '1680px' ],
+			large:    [ '981px',   '1280px' ],
+			medium:   [ '737px',   '980px'  ],
+			small:    [ '481px',   '736px'  ],
+			xsmall:   [ null,      '480px'  ]
 		});
 
+var e = document.getElementById("myVideo");
+e.style.opacity = 0;
+
+var vid = document.getElementById("myVideo");
+vid.oncanplaythrough = function() {
+    setTimeout(function() {
+        var e = document.getElementById('myVideo');
+        fade(e);
+    }, 2000);
+};
+
+function fade(element) {
+    var op = 0;
+    var timer = setInterval(function() {
+        if (op >= 1) clearInterval(timer);
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1 || 0.1;
+    }, 10);
+}
+var video = document.getElementById("myVideo");
+video.addEventListener("canplay", function() {
+  setTimeout(function() {
+    video.play();
+  }, 1500);
+});
 	// Play initial animations on page load.
 		$window.on('load', function() {
-			setTimeout(function() {
+			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
 		});
 
-	// Touch mode.
+	// Mobile?
 		if (browser.mobile)
-			$body.addClass('is-touch');
+			$body.addClass('is-mobile');
 		else {
 
-			breakpoints.on('<=small', function() {
-				$body.addClass('is-touch');
+			breakpoints.on('>medium', function() {
+				$body.removeClass('is-mobile');
 			});
 
-			breakpoints.on('>small', function() {
-				$body.removeClass('is-touch');
+			breakpoints.on('<=medium', function() {
+				$body.addClass('is-mobile');
 			});
 
 		}
 
-	// Fix: IE flexbox fix.
-		if (browser.name == 'ie') {
+	// Scrolly.
+		$('.scrolly')
+			.scrolly({
+				speed: 1500,
+				offset: $header.outerHeight()
+			});
 
-			var $main = $('.main.fullscreen'),
-				IEResizeTimeout;
+	// Menu.
+		$('#menu')
+			.append('<a href="#menu" class="close"></a>')
+			.appendTo($body)
+			.panel({
+				delay: 500,
+				hideOnClick: true,
+				hideOnSwipe: true,
+				resetScroll: true,
+				resetForms: true,
+				side: 'right',
+				target: $body,
+				visibleClass: 'is-menu-visible'
+			});
 
-			$window
-				.on('resize.ie-flexbox-fix', function() {
+	// Header.
+		if ($banner.length > 0
+		&&	$header.hasClass('alt')) {
 
-					clearTimeout(IEResizeTimeout);
+			$window.on('resize', function() { $window.trigger('scroll'); });
 
-					IEResizeTimeout = setTimeout(function() {
-
-						var wh = $window.height();
-
-						$main.each(function() {
-
-							var $this = $(this);
-
-							$this.css('height', '');
-
-							if ($this.height() <= wh)
-								$this.css('height', (wh - 50) + 'px');
-
-						});
-
-					});
-
-				})
-				.triggerHandler('resize.ie-flexbox-fix');
+			$banner.scrollex({
+				bottom:		$header.outerHeight() + 1,
+				terminate:	function() { $header.removeClass('alt'); },
+				enter:		function() { $header.addClass('alt'); },
+				leave:		function() { $header.removeClass('alt'); }
+			});
 
 		}
-
+	
 	// Gallery.
 		$window.on('load', function() {
 
@@ -119,7 +145,7 @@
 						.scrollex({
 							top:		'30vh',
 							bottom:		'30vh',
-							delay:		50,
+							delay:		20,
 							initialize:	function() { $(this).addClass('inactive'); },
 							terminate:	function() { $(this).removeClass('inactive'); },
 							enter:		function() { $(this).removeClass('inactive'); },
@@ -151,7 +177,7 @@
 					$('#contact')
 						.scrollex({
 							top:		'50%',
-							delay:		50,
+							delay:		20,
 							initialize:	function() { $(this).addClass('inactive'); },
 							terminate:	function() { $(this).removeClass('inactive'); },
 							enter:		function() { $(this).removeClass('inactive'); },
@@ -215,5 +241,6 @@
 			.on('load', function() {
 				$window.trigger('resize');
 			});
+
 
 })(jQuery);
