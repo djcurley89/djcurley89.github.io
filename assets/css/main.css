@@ -3207,7 +3207,7 @@ body.is-mobile .main.style2 .button.anchored {
 				}
 			
 
-		@media screen and (max-width: 736px) {
+		@media screen and (orientation:portrait) {
 
 			.main > .content br {
 				display: none;
@@ -5465,7 +5465,7 @@ display: block;
 	float: left;
 }
 			
-			@media screen and (max-width: 736px) {
+			@media screen and (orientation:portrait) {
 
 			#one {
 				 background: url(images/overlay.png), url("../../images/profilevert.jpg");
