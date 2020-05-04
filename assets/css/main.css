@@ -3000,9 +3000,9 @@ input, select, textarea {
 			.main > .content > :last-child {
 				margin-bottom: 0;
 			}
-	body.is-mobile .main.fullscreen {
+	/* body.is-mobile .main.fullscreen {
 			max-height: 100%;
-		}
+		} */
 		.main.fullscreen {
 			max-height: 800px;
 		}
@@ -3226,7 +3226,7 @@ body.is-mobile .main.style2 .button.anchored {
 				}
 
 			.main.style2 {
-				padding: 24em 15px 1em 15px;
+				padding: 20em .2em 5em .2em;
 			}
 
 				.main.style2:before, .main.style2:after {
