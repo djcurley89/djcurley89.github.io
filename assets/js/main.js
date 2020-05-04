@@ -25,7 +25,7 @@ vid.oncanplaythrough = function() {
     setTimeout(function() {
         var e = document.getElementById('myVideo');
         fade(e);
-    }, 2000);
+    }, 1600);
 };
 
 function fade(element) {
@@ -41,7 +41,7 @@ var video = document.getElementById("myVideo");
 video.addEventListener("canplay", function() {
   setTimeout(function() {
     video.play();
-  }, 1500);
+  }, 1200);
 });
 	// Play initial animations on page load.
 		$window.on('load', function() {
