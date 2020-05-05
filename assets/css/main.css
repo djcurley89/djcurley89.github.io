@@ -3043,6 +3043,43 @@ input, select, textarea {
 				opacity: 0;
 			}
 
+@media screen and (max-width: 2160px) {
+
+			.main.style2 {
+				padding: 8em 0 8em 0;
+			}
+
+		}
+@media screen and (max-width: 1680px) {
+
+			.main.style2 {
+				padding: 6em 0 6em 0;
+			}
+
+		}
+@media screen and (max-width: 1280px) {
+
+			.main.style2 {
+				padding: 5em 0 5em 0;
+			}
+
+		}
+
+@media screen and (max-width: 980px) {
+
+			.main.style2 {
+				padding: 3em 0 3em 0;
+			}
+
+		}
+@media screen and (max-width: 736px) {
+
+			.main.style2 {
+				padding: 2em 0 2em 0;
+			}
+
+		}
+
 		.main.style2 {
 			-moz-align-items: center;
 			-webkit-align-items: center;
@@ -3052,7 +3089,6 @@ input, select, textarea {
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			padding: 3em 0 3em 0;
 			overflow: hidden;
 		}
 
@@ -3180,7 +3216,7 @@ input, select, textarea {
 
 		}
 		
-@media screen and (max-height: 1080px) {
+@media screen and (max-height: 980px) {
 
 			.main.style2 .content {
 				height: 80%;
