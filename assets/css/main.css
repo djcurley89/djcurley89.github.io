@@ -1,4 +1,4 @@
-}img}@import url(fontawesome-all.min.css);
+@import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 
 
@@ -2055,7 +2055,6 @@ input, select, textarea {
 	.icon {
 		text-decoration: none;
 		position: relative;
-		text-decoration: none;
 	}
 
 		.icon:before {
@@ -4822,7 +4821,7 @@ display: block;
     z-index: -1;
     background-image: url("../../images/texture.png"), linear-gradient(0deg, rgba(0, 0, 0, .75) 75%, rgba(0, 0, 0, 1) 100%);
 	background-blend-mode: multiply;
-    opacity: 1;
+    opacity: .85;
 }
 
 		#banner h2 {
@@ -5561,9 +5560,9 @@ display: block;
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-color: transparent;
+
 	}
 
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
-	}
+			}}
