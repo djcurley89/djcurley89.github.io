@@ -3241,8 +3241,23 @@ input, select, textarea {
 body.is-mobile .main.style2 .button.anchored {
 					display: none;
 				}
-			
+	
+	@media screen and (orientation:portrait) and (max-width:1480px) {
+		
+			.main.style2 {
+				padding: 50em .2em 10em .2em;
+			}
+}
 
+	@media screen and (orientation:portrait) and (max-width:480px) {
+		
+			.main.style2 {
+				padding: 22em .2em 2em .2em;
+			}
+}
+
+
+		
 		@media screen and (orientation:portrait) {
 
 			.main > .content br {
@@ -3261,9 +3276,7 @@ body.is-mobile .main.style2 .button.anchored {
 					font-size: 3em;
 				}
 
-			.main.style2 {
-				padding: 22em .2em 2em .2em;
-			}
+
 
 				.main.style2:before, .main.style2:after {
 					display: none !important;
