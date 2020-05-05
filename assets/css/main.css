@@ -4821,8 +4821,8 @@ display: block;
     left: 0px;
     z-index: -1;
     background-image: url("../../images/texture.png"), linear-gradient(0deg, rgba(0, 0, 0, .75) 75%, rgba(0, 0, 0, 1) 100%);
-	background-blend-mode: overlay;
-    opacity: .85;
+	background-blend-mode: multiply;
+    opacity: 1;
 }
 
 		#banner h2 {
