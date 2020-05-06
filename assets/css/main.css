@@ -4845,8 +4845,8 @@ display: block;
 }
 
 .overlay {
-  background-image: linear-gradient(to bottom right,#010101,#020202);
-  opacity: .8;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .7) 85%, rgba(0, 0, 0, .9) 100%);
+  opacity: 1;
   position: absolute;
   bottom: 0;
   left: 0;
