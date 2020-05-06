@@ -4788,8 +4788,7 @@ display: block;
 		-ms-justify-content: center;
 		justify-content: center;
 		cursor: default;
-		height: 100vh;
-		min-height: 35em;
+		min-height: 100vh;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
@@ -5013,12 +5012,15 @@ display: block;
 
 		@media screen and (max-width: 736px) {
 
-			#banner inner {
+			#banner {
+				max-width: 100%;
+				min-height: 40%;
+				}
+				
+				#banner inner {
 				padding: 7em 3em 5em 3em ;
-				height: auto;
-				min-height: 0;
-			}
-
+				}
+			
 				#banner h2 {
 					font-size: 1.25em;
 				}
