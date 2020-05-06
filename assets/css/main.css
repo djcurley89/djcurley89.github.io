@@ -4989,6 +4989,17 @@ display: block;
 
 			}
 
+@media screen and (max-height: 480px) {
+
+		#banner .more:after {
+			background-size: 25px;
+			width: 4em;
+			height: 4em;
+			border: solid 2px #e5e6e7;
+			bottom: 3em;
+		}
+}
+
 		#banner:after {
 			pointer-events: none;
 			-moz-transition: opacity 3s ease-in-out;
