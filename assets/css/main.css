@@ -5014,7 +5014,8 @@ display: block;
 
 			#banner {
 				max-width: 100%;
-				min-height: 40%;
+				height: 40%;
+				min-height: 15em;
 				}
 				
 				#banner inner {
