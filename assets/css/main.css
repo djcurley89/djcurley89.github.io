@@ -5009,7 +5009,7 @@ display: block;
 			top: 0;
 			z-index: -1
 		}
-
+		
 		@media screen and (max-width: 736px) {
 
 			#banner {
@@ -5035,6 +5035,14 @@ display: block;
 				}
 
 		}
+
+	@media screen and (max-width: 736px) and (orientation: portrait) {
+		
+		.inner p {
+			margin: 0 3em 0 3em;
+		}
+}
+				
 
 	body.is-preload #banner h2 {
 		-moz-transform: scale(0.95);
