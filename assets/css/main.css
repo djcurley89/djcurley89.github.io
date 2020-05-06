@@ -1816,7 +1816,7 @@ input, select, textarea {
 	}
 
 	header.major {
-		margin: 0 0 3.5em 0;
+		margin: 0 0 3em 0;
 	}
 
 		header.major h2, header.major h3, header.major h4, header.major h5 {
@@ -3845,7 +3845,7 @@ body.is-mobile .main.style2 .button.anchored {
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-	padding: 4em;
+	padding: 2em;
 }
 
 
@@ -5039,7 +5039,7 @@ display: block;
 				min-height: 15em;
 				}
 		
-		.inner p {
+		#banner .inner p {
 			margin: 0 3em 0 3em;
 		}
 }
@@ -5443,8 +5443,13 @@ display: block;
 		@media screen and (max-width: 736px) {
 
 			#contact .box {
-				padding: 1.5em 1.5em 2em 1.5em;
+				padding: 1.5em 0em 2em 0em;
 			}
+			
+			#contact h2 {
+				margin: 
+			}
+			
 			#contact p{
 				font-size: 1.4em;
 			}
@@ -5452,13 +5457,20 @@ display: block;
 		}
 
 		@media screen and (max-width: 480px) {
+			
+			#contact .inner {
+				padding: 2em 1em 1em 1em;
+			}
 
 			#contact .box {
 				padding: 1em 1em 2em 1em;
 			}
 			
 			#contact p{
-				font-size: 1em;
+				margin-block-start: 1em;
+				margin-block-end: 0em;
+				margin: .5em 0 0 0;
+				font-size: 1.4em;
 				align-content: center;
 			}
 
