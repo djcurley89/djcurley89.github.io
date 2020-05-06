@@ -3149,6 +3149,25 @@ input, select, textarea {
 				background: #5F616B;
 			}
 
+@media screen and (max-height: 480px) {
+
+	#work header.major h2 {
+		padding-bottom: .25em;
+	}
+	
+	.main.style3 .content > header {
+				margin-bottom: .5em;
+			}
+	
+		.main.style3 {
+			text-align: center;
+			padding: 2em 0 2em 0;
+		}
+	
+		
+}
+
+
 		.main.dark {
 			color: #808080;
 		}
@@ -4991,12 +5010,16 @@ display: block;
 
 @media screen and (max-height: 480px) {
 
-		#banner .more:after {
+	#banner .more {
+		margin-left: -2em;
+	}	
+	
+	#banner .more:after {
 			background-size: 25px;
 			width: 4em;
 			height: 4em;
 			border: solid 2px #e5e6e7;
-			bottom: 3em;
+			bottom: 2em;
 		}
 }
 
@@ -5458,7 +5481,7 @@ display: block;
 			}
 			
 			#contact h2 {
-				margin: 
+				margin: 0 0 1em 0;
 			}
 			
 			#contact p{
