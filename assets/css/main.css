@@ -5023,6 +5023,21 @@ display: block;
 		}
 }
 
+@media screen and (max-width: 736px) and (max-height: 480px) {
+
+	#banner .more {
+		margin-left: -2em;
+	}	
+	
+	#banner .more:after {
+			background-size: 25px;
+			width: 4em;
+			height: 4em;
+			border: solid 2px #e5e6e7;
+			bottom: 2em;
+		}
+}
+
 		#banner:after {
 			pointer-events: none;
 			-moz-transition: opacity 3s ease-in-out;
@@ -5044,7 +5059,7 @@ display: block;
 			z-index: -1
 		}
 		
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 736px) and (orientation: portrait) {
 
 							
 				#banner inner {
