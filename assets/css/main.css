@@ -4825,6 +4825,7 @@ display: block;
 */
 
 .video-container {
+  position: absolute;
   top: 0;
   bottom: 0;
   width: 100%; 
@@ -4844,8 +4845,8 @@ display: block;
     transform: translate(-50%,-50%)
 }
 
-/*.overlay {
-  background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+.overlay {
+  background-image: linear-gradient(to bottom right,#010101,#020202);
   opacity: .8;
   position: absolute;
   bottom: 0;
@@ -4855,8 +4856,8 @@ display: block;
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-} */
-.overlay {
+} 
+/* .overlay {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -4866,7 +4867,7 @@ display: block;
     background-image: url("../../images/texture.png"), linear-gradient(0deg, rgba(0, 0, 0, .75) 75%, rgba(0, 0, 0, 1) 100%);
 	background-blend-mode: multiply;
     opacity: .85;
-}
+} */
 
 		#banner h2 {
 			-moz-transform: scale(1);
