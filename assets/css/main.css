@@ -5193,7 +5193,7 @@ display: block;
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-	padding: 2em;
+	padding: 2em 1em 2em 1em;
 
 }
 
