@@ -5354,7 +5354,7 @@ display: block;
 		@media screen and (max-width: 2160px) {
 
 			#studios img {
-				max-height: 70px;
+				max-height: 65px;
 			}
 
 		}
@@ -5378,7 +5378,7 @@ display: block;
 		@media screen and (max-width: 736px) {
 
 			#studios img {
-				max-height: 75px;
+				max-height: 55px;
 			}
 
 				
